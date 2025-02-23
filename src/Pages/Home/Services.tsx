@@ -45,18 +45,18 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section className="bg-[#01321F]">
-      <div className="max-w-[1300px] mx-auto py-32">
-        <h2 className="text-white font-bold text-5xl text-center pb-2.5">
+    <section className="bg-[#01321F] px-3">
+      <div className="max-w-[1300px] mx-auto py-10 md:py-20 lg:py-32 ">
+        <h2 className="text-white font-bold text-4xl lg:text-5xl text-center pb-2.5">
           <span className="text-[#E7B51E]">Services</span> we can help you with
         </h2>
         <p className="text-white text-center text-xl font-light leading-6 max-w-[500px] mx-auto">
           We offer a comprehensive range of services to support your business
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-10 md:pt-20 lg:pt-24">
           {servicesData.map((item, index) => (
-            <div key={index} className="border-2 border-[#03472D] rounded-2xl p-12">
+            <div key={index} className="border-2 border-[#03472D] rounded-2xl p-6 md:p-12">
               <div className="flex justify-center py-12">
                 <img src={item.image} alt={item.title} />
               </div>

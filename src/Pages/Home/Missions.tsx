@@ -19,12 +19,12 @@ const missionsData = [
 
 const Missions = () => {
   return (
-    <section className="max-w-[1300px] mx-auto py-32">
+    <section className="max-w-[1300px] mx-auto py-10 lg:py-32 px-3">
       <div className="">
 
-        <div className="md:flex justify-center gap-8">
+        <div className="flex flex-col md:flex-row justify-center gap-8">
           {missionsData.map((item, index) => (
-            <div key={index} className="bg-[#EDE2C1] rounded-3xl p-8 max-w-[500px]">
+            <div key={index} className="bg-[#EDE2C1] rounded-3xl p-4 md:p-8 max-w-[500px]">
               <div className="flex justify-center py-5">
                 <img src={item.image} alt={item.title} />
               </div>

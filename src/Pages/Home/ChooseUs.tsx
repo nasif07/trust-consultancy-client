@@ -25,9 +25,9 @@ const missionsData = [
 
 const ChooseUs = () => {
   return (
-    <section className="max-w-[1300px] mx-auto py-32">
+    <section className="max-w-[1300px] mx-auto py-10 lg:py-32 px-3 font-inter">
       <div className="">
-        <h2 className="text-[#2A2A2A] font-bold text-5xl pb-5">
+        <h2 className="text-[#2A2A2A] font-bold text-4xl lg:text-5xl pb-5">
           Why Choose
           <span className="text-[#E7B51E]"> Us</span>?
         </h2>
@@ -37,11 +37,11 @@ const ChooseUs = () => {
           your unique needs.
         </p>
 
-        <div className="flex items-center gap-12 pt-12">
+        <div className="flex flex-col md:flex-row items-center gap-12 pt-12">
           <img src={banner} alt="" />
           <div className="flex flex-col gap-5">
             {missionsData.map((item, index) => (
-              <div className="flex gap-4" key={index}>
+              <div className="flex gap-2 md:gap-4" key={index}>
                 <div className="pt-2">
                   <IoIosArrowDroprightCircle />
                 </div>
