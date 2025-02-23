@@ -1,4 +1,6 @@
 import Banner from "./Banner";
+import ChooseUs from "./ChooseUs";
+import Faq from "./Faq";
 import Missions from "./Missions";
 import Services from "./Services";
 
@@ -8,6 +10,8 @@ const Home = () => {
             <Banner></Banner>
             <Services></Services>
             <Missions></Missions>
+            <ChooseUs></ChooseUs>
+            <Faq></Faq>
         </div>
     );
 };
