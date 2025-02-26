@@ -14,24 +14,24 @@ const Banner = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
         className="max-w-[650px]">
-        <h1 className="text-[#2A2A2A] font-bold text-3xl md:text-4xl lg:text-[68px] pb-7 md:!leading-[80px] tracking-wide">
+        <h1 className="text-[#2A2A2A] font-bold text-3xl md:text-4xl lg:text-[65px] pb-7 md:!leading-[80px] tracking-wide">
           Your Partner in Business{" "}
           <TypeAnimation
-          className="text-[]"
+            className="text-[]"
             sequence={[
               "Growth", // Types 'One'
               1000, // Waits 1s
               "VAT", // Deletes 'One' and types 'Two'
               1000, // Waits 2s
-              "Tex", 
-              1000
+              "Tex",
+              1000,
             ]}
             wrapper="span"
             cursor={true}
             repeat={Infinity}
-            style={{ color: '#E7B51E' }}
+            style={{ color: "#E7B51E" }}
           />
-          <br />& Compliance
+          & Compliance
         </h1>
         <p className="text-base font-light pb-10">
           Welcome to Trust Consultancy, your reliable partner in VAT, Tax, and
