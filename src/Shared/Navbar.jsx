@@ -150,7 +150,7 @@ const Navbar = () => {
                       VAT & Tax
                     </NavLink>
                     <NavLink
-                      to="/services/service2"
+                      to="/company-law"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       Company Law
                     </NavLink>
@@ -264,7 +264,7 @@ const Navbar = () => {
                 VAT & Tax
               </NavLink>
               <NavLink
-                to="/services/service2"
+                to="/company-law"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 Law
               </NavLink>
