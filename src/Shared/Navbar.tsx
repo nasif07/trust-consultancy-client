@@ -109,7 +109,7 @@ const Navbar = () => {
 
       {/* Sticky Navbar (Only Sticky for Large Screens) */}
       <nav
-        className={`bg-[#E7E7E7] py-3 md:px-10 px-4 w-full z-50 transition-all duration-300 ${
+        className={`bg-[#E7E7E7] py-3 md:px-10 px-4 w-full z-40 transition-all duration-300 ${
           isScrolled ? "fixed top-0 left-0 lg:block hidden" : "relative"
         }`}>
         <div className="max-w-[1300px] mx-auto flex justify-between items-center">
@@ -131,40 +131,72 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                className="text-black text-sm font-medium">
-                Our Services
+                className={`text-black text-sm font-medium`}>
+                <span
+                  className={` ${servicesDropdownOpen && "text-[#E7B51E]"}`}>
+                  Our Services
+                </span>
               </button>
               {servicesDropdownOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute top-12 left-0 w-48 bg-white shadow-xl rounded-lg z-10">
-                  <NavLink
-                    to="/services/service1"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
-                    VAT & Tax
-                  </NavLink>
-                  <NavLink
-                    to="/services/service2"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                    Law
-                  </NavLink>
-                  <NavLink
-                    to="/services/service3"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                    Trade License
-                  </NavLink>
-                  <NavLink
-                    to="/services/service3"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                    BIDA
-                  </NavLink>
-                  <NavLink
-                    to="/services/service3"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                    Accounts
-                  </NavLink>
+                  className="absolute top-12 -left-40 whitespace-nowrap justify-between bg-white shadow-xl rounded-lg z-10 flex gap-8 p-5">
+                  <div className="w-full">
+                    <NavLink
+                      to="/vat-&-tax"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
+                      VAT & Tax
+                    </NavLink>
+                    <NavLink
+                      to="/services/service2"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                      Company Law
+                    </NavLink>
+                    <NavLink
+                      to="/services/service3"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                      Trade License Assistance
+                    </NavLink>
+                    <NavLink
+                      to="/services/service3"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                      BIDA Services
+                    </NavLink>
+                    <NavLink
+                      to="/services/service3"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                      Company Accounts
+                    </NavLink>
+                  </div>
+                  <div className="w-full">
+                    <NavLink
+                      to="/services/service1"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
+                      Fire & Environmental Certification
+                    </NavLink>
+                    <NavLink
+                      to="/services/service2"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                      IRC & ERC Services
+                    </NavLink>
+                    <NavLink
+                      to="/services/service3"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                      VAT & Tax Case Solutions
+                    </NavLink>
+                    <NavLink
+                      to="/services/service3"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                      Refund & Carry Forward
+                    </NavLink>
+                    <NavLink
+                      to="/services/service3"
+                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                      Membership Certificate
+                    </NavLink>
+                  </div>
                 </motion.div>
               )}
             </div>
@@ -214,46 +246,71 @@ const Navbar = () => {
         className={`lg:hidden bg-[#E7E7E7] overflow-hidden px-4 flex flex-col gap-3 ${
           menuOpen ? "py-3" : "py-0"
         }`}>
-        <div className="relative">
-              <button
-                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                className="text-black text-sm font-medium">
-                Our Services
-              </button>
-              {servicesDropdownOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="absolute top-12 left-0 w-48 bg-white shadow-xl rounded-lg z-10">
-                  <NavLink
-                    to="/services/service1"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
-                    VAT & Tax
-                  </NavLink>
-                  <NavLink
-                    to="/services/service2"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                    Law
-                  </NavLink>
-                  <NavLink
-                    to="/services/service3"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                    Trade License
-                  </NavLink>
-                  <NavLink
-                    to="/services/service3"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                    BIDA
-                  </NavLink>
-                  <NavLink
-                    to="/services/service3"
-                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                    Accounts
-                  </NavLink>
-                </motion.div>
-              )}
-            </div>
+        <div className="relative whitespace-nowrap">
+          <button
+            onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+            className="text-black text-sm font-medium">
+            Our Services
+          </button>
+          {servicesDropdownOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-8 left-0 w-full bg-white shadow-xl rounded-lg z-[999]">
+              <NavLink
+                to="/vat-&-tax"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
+                VAT & Tax
+              </NavLink>
+              <NavLink
+                to="/services/service2"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                Law
+              </NavLink>
+              <NavLink
+                to="/services/service3"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                Trade License
+              </NavLink>
+              <NavLink
+                to="/services/service3"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                BIDA
+              </NavLink>
+              <NavLink
+                to="/services/service3"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                Accounts
+              </NavLink>
+              <NavLink
+                to="/services/service1"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
+                Fire & Environmental Certification
+              </NavLink>
+              <NavLink
+                to="/services/service2"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                IRC & ERC Services
+              </NavLink>
+              <NavLink
+                to="/services/service3"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                VAT & Tax Case Solutions
+              </NavLink>
+              <NavLink
+                to="/services/service3"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                Refund & Carry Forward
+              </NavLink>
+              <NavLink
+                to="/services/service3"
+                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                Membership Certificate
+              </NavLink>
+            </motion.div>
+          )}
+        </div>
         {[
           { name: "Home", path: "/" },
           { name: "About Us", path: "/about" },
