@@ -69,7 +69,7 @@ const Faq = () => {
               <div
                 onClick={() => handleToggle(idx)}
                 className="px-4 md:px-8 py-6 cursor-pointer flex items-center justify-between">
-                <h4 className="text-[#2A2A2A] text-xl font-semibold">
+                <h4 className="text-[#2A2A2A] text-base md:text-xl font-semibold">
                   {item.title}
                 </h4>
                 <motion.span
@@ -101,7 +101,7 @@ const Faq = () => {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}>
-                    <div className="pb-6 pr-4 pl-14 md:pl-16 text-base text-[#64687B] max-w-[700px]">
+                    <div className="pb-6 pr-4 pl-6 md:pl-16 text-base text-[#64687B] max-w-[700px]">
                       {item.description}
                     </div>
                   </motion.div>

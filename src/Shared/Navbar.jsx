@@ -174,27 +174,27 @@ const Navbar = () => {
                   </div>
                   <div className="w-full">
                     <NavLink
-                      to="/services/service1"
+                      to="/fire-&-environmental-certification"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
                       Fire & Environmental Certification
                     </NavLink>
                     <NavLink
-                      to="/services/service2"
+                      to="/IRC-&-ERC"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       IRC & ERC Services
                     </NavLink>
                     <NavLink
-                      to="/services/service3"
+                      to="/vat-&-tax-case-solutions"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       VAT & Tax Case Solutions
                     </NavLink>
                     <NavLink
-                      to="/services/service3"
+                      to="Refund-&-carry-forward"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       Refund & Carry Forward
                     </NavLink>
                     <NavLink
-                      to="/services/service3"
+                      to="/membership-certificate"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       Membership Certificate
                     </NavLink>
@@ -248,10 +248,11 @@ const Navbar = () => {
         className={`lg:hidden bg-[#E7E7E7] overflow-hidden px-4 flex flex-col gap-3 ${
           menuOpen ? "py-3" : "py-0"
         }`}>
-        <div className="relative whitespace-nowrap">
+        <div
+         className="whitespace-nowrap">
           <button
             onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-            className="text-black text-sm font-medium">
+           className={` text-sm font-medium ${servicesDropdownOpen && "underline text-[#E7B51E]"}`}>
             Our Services
           </button>
           {servicesDropdownOpen && (
@@ -259,7 +260,7 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-8 left-0 w-full bg-white shadow-xl rounded-lg z-[999]"
+              className="absolute top-36 left-3  bg-white shadow-xl rounded-lg z-[999]"
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
               >
               <NavLink
@@ -288,27 +289,27 @@ const Navbar = () => {
                 Accounts
               </NavLink>
               <NavLink
-                to="/services/service1"
+                to="/fire-&-environmental-certification"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
                 Fire & Environmental Certification
               </NavLink>
               <NavLink
-                to="/services/service2"
+                to="/IRC-&-ERC"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 IRC & ERC Services
               </NavLink>
               <NavLink
-                to="/services/service3"
+                to="/vat-&-tax-case-solutions"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 VAT & Tax Case Solutions
               </NavLink>
               <NavLink
-                to="/services/service3"
+                to="/Refund-&-carry-forward"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 Refund & Carry Forward
               </NavLink>
               <NavLink
-                to="/services/service3"
+                to="/membership-certificate"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 Membership Certificate
               </NavLink>
