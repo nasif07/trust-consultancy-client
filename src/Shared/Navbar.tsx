@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false); // New state for dropdown
 
   useEffect(() => {
     const handleScroll = () => {
@@ -126,10 +127,50 @@ const Navbar = () => {
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex gap-4 lg:gap-16">
+            {/* Dropdown for Services */}
+            <div className="relative">
+              <button
+                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                className="text-black text-sm font-medium">
+                Our Services
+              </button>
+              {servicesDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute top-12 left-0 w-48 bg-white shadow-xl rounded-lg z-10">
+                  <NavLink
+                    to="/services/service1"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
+                    VAT & Tax
+                  </NavLink>
+                  <NavLink
+                    to="/services/service2"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                    Law
+                  </NavLink>
+                  <NavLink
+                    to="/services/service3"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                    Trade License
+                  </NavLink>
+                  <NavLink
+                    to="/services/service3"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                    BIDA
+                  </NavLink>
+                  <NavLink
+                    to="/services/service3"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                    Accounts
+                  </NavLink>
+                </motion.div>
+              )}
+            </div>
             {[
               { name: "Home", path: "/" },
               { name: "About Us", path: "/about" },
-              { name: "Our Services", path: "/services" },
               { name: "FAQ", path: "/faq" },
               { name: "Career", path: "/career" },
               { name: "Contact Us", path: "/contact" },
@@ -147,7 +188,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Toggle Button - Unchanged */}
+          {/* Mobile Menu Toggle Button */}
           <div className="lg:hidden flex justify-between w-full items-center gap-10">
             <div>
               <img src={logo} alt="logo" className="h-10" />
@@ -165,7 +206,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Animated Mobile Menu (Unchanged) */}
+      {/* Animated Mobile Menu */}
       <motion.div
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: menuOpen ? "auto" : 0, opacity: menuOpen ? 1 : 0 }}
@@ -173,10 +214,49 @@ const Navbar = () => {
         className={`lg:hidden bg-[#E7E7E7] overflow-hidden px-4 flex flex-col gap-3 ${
           menuOpen ? "py-3" : "py-0"
         }`}>
+        <div className="relative">
+              <button
+                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                className="text-black text-sm font-medium">
+                Our Services
+              </button>
+              {servicesDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute top-12 left-0 w-48 bg-white shadow-xl rounded-lg z-10">
+                  <NavLink
+                    to="/services/service1"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
+                    VAT & Tax
+                  </NavLink>
+                  <NavLink
+                    to="/services/service2"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                    Law
+                  </NavLink>
+                  <NavLink
+                    to="/services/service3"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                    Trade License
+                  </NavLink>
+                  <NavLink
+                    to="/services/service3"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                    BIDA
+                  </NavLink>
+                  <NavLink
+                    to="/services/service3"
+                    className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
+                    Accounts
+                  </NavLink>
+                </motion.div>
+              )}
+            </div>
         {[
           { name: "Home", path: "/" },
           { name: "About Us", path: "/about" },
-          { name: "Our Services", path: "/services" },
           { name: "FAQ", path: "/faq" },
           { name: "Career", path: "/career" },
           { name: "Contact Us", path: "/contact" },

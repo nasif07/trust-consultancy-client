@@ -23,7 +23,7 @@ const Banner = () => {
               1000, // Waits 1s
               "VAT", // Deletes 'One' and types 'Two'
               1000, // Waits 2s
-              "Tex",
+              "TAX",
               1000,
             ]}
             wrapper="span"
