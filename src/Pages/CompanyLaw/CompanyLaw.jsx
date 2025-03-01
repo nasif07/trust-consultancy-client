@@ -6,51 +6,47 @@ import imageUrl from "../../assets/companyLawBanner.png.png";
 const CompanyLaw = () => {
   const lists = [
     {
-      title: "Business Services",
+      title: "Business Registration & Incorporation",
       items: [
-        "VAT Registration - Assistance with VAT registration for businesses of all sizes",
-        "Tax Consultation - Expert advice on corporate and personal taxation",
-        "Payroll Management - Handling employee salaries, taxes, and compliance",
-        "Business Formation - Guidance on setting up sole proprietorships, LLCs, and corporations",
+        "Assistance with company formation and registration.",
+        "Guidance on choosing the right business structure (Sole Proprietorship, Partnership, Private Limited, etc.).",
+        "Obtaining necessary licenses and regulatory approvals.",
       ],
     },
     {
-      title: "Marketing Solutions",
+      title: "Corporate Compliance & Governance",
       items: [
-        "SEO Optimization - Improve search engine rankings and visibility",
-        "Social Media Management - Manage and grow your online presence",
-        "Content Marketing - Create and distribute valuable content",
-        "Email Campaigns - Effective email strategies for customer engagement",
+        "Ensuring compliance with the Companies Act and other corporate laws.",
+        "Drafting and reviewing corporate policies and governance frameworks.",
+        "Assistance with shareholder agreements and board resolutions.",
       ],
     },
     {
-      title: "IT Support",
+      title: "Legal Documentation & Contract Drafting",
       items: [
-        "Network Security - Protect systems from cyber threats",
-        "Cloud Solutions - Scalable cloud storage and computing",
-        "Software Development - Custom applications for business needs",
-        "IT Consulting - Expert advice on technology strategies",
+        "Drafting and reviewing business contracts and agreements.",
+        "Preparing Memorandum & Articles of Association.",
+        "Assistance with mergers, acquisitions, and joint ventures.",
       ],
     },
     {
-      title: "Financial Services",
+      title: "Regulatory Filings & Reporting",
       items: [
-        "Investment Planning - Secure your financial future",
-        "Retirement Savings - Guidance on pension and savings plans",
-        "Wealth Management - Optimize assets and financial health",
-        "Tax Filing - Assistance with personal and business tax returns",
+        "Annual return filing with the Registrar of Joint Stock Companies (RJSC).",
+        "Preparation and submission of statutory reports.",
+        "Advising on compliance with tax and labor regulations.",
       ],
     },
     {
-      title: "Education & Training",
+      title: "Business Restructuring & Dissolution",
       items: [
-        "Online Courses - Learn new skills from top educators",
-        "Corporate Training - Upskill your employees for better performance",
-        "Language Classes - Improve communication in different languages",
-        "Career Coaching - Professional guidance for job growth",
+        "Advisory on company mergers, acquisitions, and demergers.",
+        "Assistance with voluntary liquidation and company closure.",
+        "Resolving corporate disputes and legal challenges.",
       ],
     },
   ];
+
   return (
     <>
       <HeroBanner
@@ -59,7 +55,9 @@ const CompanyLaw = () => {
         subtitle={
           "At Trust Consultancy, we provide expert company law consulting services to help businesses navigate legal complexities and ensure compliance with Bangladesh’s corporate regulations. Whether you are starting a new company, restructuring, or managing ongoing legal obligations, our team is here to support you every step of the way."
         }></HeroBanner>
-      <ServiceListView itemData={lists}></ServiceListView>
+      <ServiceListView
+        title={"Our Company Law Services"}
+        itemData={lists}></ServiceListView>
       <Faq></Faq>
     </>
   );

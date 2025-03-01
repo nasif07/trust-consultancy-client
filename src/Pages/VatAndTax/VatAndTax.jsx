@@ -6,51 +6,47 @@ import imageUrl from "../../assets/vatTaxBanner.png";
 const VatAndTax = () => {
     const lists = [
         {
-            "title": "Business Services",
-            "items": [
-                "VAT Registration - Assistance with VAT registration for businesses of all sizes",
-                "Tax Consultation - Expert advice on corporate and personal taxation",
-                "Payroll Management - Handling employee salaries, taxes, and compliance",
-                "Business Formation - Guidance on setting up sole proprietorships, LLCs, and corporations"
+            title: "VAT Registration & Compliance",
+            items: [
+                "Assistance with VAT registration for businesses of all sizes.",
+                "Ensuring compliance with Bangladesh VAT laws and regulations.",
+                "Preparation and submission of VAT returns.",
+                "Advisory on VAT record-keeping and documentation."
             ]
         },
         {
-            "title": "Marketing Solutions",
-            "items": [
-                "SEO Optimization - Improve search engine rankings and visibility",
-                "Social Media Management - Manage and grow your online presence",
-                "Content Marketing - Create and distribute valuable content",
-                "Email Campaigns - Effective email strategies for customer engagement"
+            title: "Tax Planning & Advisory",
+            items: [
+                "Strategic tax planning to reduce liabilities and enhance profitability.",
+                "Customized tax advisory services for individuals and businesses.",
+                "Assistance with tax exemptions, deductions, and incentives."
             ]
         },
         {
-            "title": "IT Support",
-            "items": [
-                "Network Security - Protect systems from cyber threats",
-                "Cloud Solutions - Scalable cloud storage and computing",
-                "Software Development - Custom applications for business needs",
-                "IT Consulting - Expert advice on technology strategies"
+            title: "VAT & Tax Filing Services",
+            items: [
+                "Timely and accurate filing of VAT and tax returns.",
+                "Managing electronic VAT invoicing and digital record-keeping.",
+                "Handling VAT rebate and refund applications."
             ]
         },
         {
-            "title": "Financial Services",
-            "items": [
-                "Investment Planning - Secure your financial future",
-                "Retirement Savings - Guidance on pension and savings plans",
-                "Wealth Management - Optimize assets and financial health",
-                "Tax Filing - Assistance with personal and business tax returns"
+            title: "Tax Dispute Resolution & Compliance Support",
+            items: [
+                "Expert representation in VAT and tax-related disputes.",
+                "Assistance in audits, investigations, and compliance checks.",
+                "Resolving tax penalties and legal complexities."
             ]
         },
         {
-            "title": "Education & Training",
-            "items": [
-                "Online Courses - Learn new skills from top educators",
-                "Corporate Training - Upskill your employees for better performance",
-                "Language Classes - Improve communication in different languages",
-                "Career Coaching - Professional guidance for job growth"
+            title: "Corporate Tax Services",
+            items: [
+                "Corporate tax return preparation and submission.",
+                "Advisory on corporate tax planning and compliance.",
+                "Handling tax audits and compliance reports."
             ]
         }
-    ]
+    ];
     
     
     
@@ -62,7 +58,7 @@ const VatAndTax = () => {
         subtitle={
           "At Trust Consultancy, we specialize in providing comprehensive VAT and tax consulting services tailored to businesses operating in Bangladesh. Navigating the complexities of tax regulations can be challenging, but with our expertise, you can ensure compliance, minimize liabilities, and optimize financial efficiency."
         }></HeroBanner>
-        <ServiceListView itemData={lists}></ServiceListView>
+        <ServiceListView title={"Our VAT & Tax Services"} itemData={lists}></ServiceListView>
       <Faq></Faq>
     </>
   );

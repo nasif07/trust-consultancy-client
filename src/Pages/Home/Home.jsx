@@ -1,5 +1,3 @@
-import WhatsAppButton from "../../Components/WhatsAppButton";
-import Footer from "../../Shared/Footer";
 import Banner from "./Banner";
 import ChooseUs from "./ChooseUs";
 import Faq from "../../Components/Faq";
@@ -16,8 +14,6 @@ const Home = () => {
       <ChooseUs></ChooseUs>
       <Reviews></Reviews>
       <Faq></Faq>
-      <Footer></Footer>
-      <WhatsAppButton></WhatsAppButton>
     </div>
   );
 };

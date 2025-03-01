@@ -10,6 +10,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false); // New state for dropdown
+  console.log(servicesDropdownOpen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,6 +140,7 @@ const Navbar = () => {
               </button>
               {servicesDropdownOpen && (
                 <motion.div
+                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
@@ -155,17 +157,17 @@ const Navbar = () => {
                       Company Law
                     </NavLink>
                     <NavLink
-                      to="/services/service3"
+                      to="/trade-license"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       Trade License Assistance
                     </NavLink>
                     <NavLink
-                      to="/services/service3"
+                      to="/BIDA"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       BIDA Services
                     </NavLink>
                     <NavLink
-                      to="/services/service3"
+                      to="/company-accounts"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       Company Accounts
                     </NavLink>
@@ -257,7 +259,9 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-8 left-0 w-full bg-white shadow-xl rounded-lg z-[999]">
+              className="absolute top-8 left-0 w-full bg-white shadow-xl rounded-lg z-[999]"
+              onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+              >
               <NavLink
                 to="/vat-&-tax"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
@@ -269,17 +273,17 @@ const Navbar = () => {
                 Law
               </NavLink>
               <NavLink
-                to="/services/service3"
+                to="/trade-license"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 Trade License
               </NavLink>
               <NavLink
-                to="/services/service3"
+                to="/BIDA"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 BIDA
               </NavLink>
               <NavLink
-                to="/services/service3"
+                to="/company-accounts"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 Accounts
               </NavLink>
