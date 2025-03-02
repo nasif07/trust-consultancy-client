@@ -6,6 +6,17 @@ import logo from "../../public/logo.svg";
 import { NavLink } from "react-router";
 import { motion } from "framer-motion";
 
+import icon1 from "../assets/icons/vatIcon.png";
+import icon2 from "../assets/icons/companyIcon.png";
+import icon3 from "../assets/icons/licenseIcon.svg";
+import icon4 from "../assets/icons/bidaIcon.svg";
+import icon5 from "../assets/icons/companyAccountsIcon.svg";
+import icon6 from "../assets/icons/fireIcon.svg";
+import icon7 from "../assets/icons/ircIcon.svg";
+import icon8 from "../assets/icons/caseSolutionIcon.svg";
+import icon9 from "../assets/icons/refundIcon.svg";
+import icon10 from "../assets/icons/membershipIcon.svg";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,6 +34,59 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const serviceLinks = [
+    {
+      to: "/vat-&-tax",
+      label: "VAT & Tax",
+      icon: icon1,
+    },
+    {
+      to: "/company-law",
+      label: "Company Law",
+      icon: icon2,
+    },
+    {
+      to: "/trade-license",
+      label: "Trade License Assistance",
+      icon: icon3,
+    },
+    {
+      to: "/BIDA",
+      label: "BIDA Services",
+      icon: icon4,
+    },
+    {
+      to: "/company-accounts",
+      label: "Company Accounts",
+      icon: icon5,
+    },
+    {
+      to: "/fire-&-environmental-certification",
+      label: "Fire & Environmental Certification",
+      icon: icon6,
+    },
+    {
+      to: "/IRC-&-ERC",
+      label: "IRC & ERC Services",
+      icon: icon7,
+    },
+    {
+      to: "/vat-&-tax-case-solutions",
+      label: "VAT & Tax Case Solutions",
+      icon: icon8,
+    },
+    {
+      to: "/refund-&-carry-forward",
+      label: "Refund & Carry Forward",
+      icon: icon9,
+    },
+    {
+      to: "/membership-certificate",
+      label: "Membership Certificate",
+      icon: icon10,
+    },
+  ];
 
   const contactInfo = [
     {
@@ -150,60 +214,38 @@ const Navbar = () => {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute top-12 -left-40 whitespace-nowrap justify-between bg-white shadow-xl rounded-lg z-10 flex gap-8 p-5">
+                  className="absolute top-12 -left-40 whitespace-nowrap justify-between bg-white shadow-xl rounded-3xl z-10 flex gap-8 p-5">
                   <div className="w-full">
-                    <NavLink
-                      to="/vat-&-tax"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
-                      VAT & Tax
-                    </NavLink>
-                    <NavLink
-                      to="/company-law"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                      Company Law
-                    </NavLink>
-                    <NavLink
-                      to="/trade-license"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                      Trade License Assistance
-                    </NavLink>
-                    <NavLink
-                      to="/BIDA"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                      BIDA Services
-                    </NavLink>
-                    <NavLink
-                      to="/company-accounts"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                      Company Accounts
-                    </NavLink>
+                    {serviceLinks.slice(0, 5).map((link, index) => (
+                      <NavLink
+                      onClick={() => window.scrollTo(0, 0)}
+                        key={index}
+                        to={link.to}
+                        className=" px-4 py-3 text-black text-base font-medium hover:text-[#E7B51E] transition flex items-center">
+                        <img
+                          src={link.icon}
+                          alt={link.label}
+                          className="mr-5 w-6 h-6" // Adjust size of the icons
+                        />
+                        {link.label}
+                      </NavLink>
+                    ))}
                   </div>
-                  <div className="w-full">
-                    <NavLink
-                      to="/fire-&-environmental-certification"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
-                      Fire & Environmental Certification
-                    </NavLink>
-                    <NavLink
-                      to="/IRC-&-ERC"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                      IRC & ERC Services
-                    </NavLink>
-                    <NavLink
-                      to="/vat-&-tax-case-solutions"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                      VAT & Tax Case Solutions
-                    </NavLink>
-                    <NavLink
-                      to="/refund-&-carry-forward"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                      Refund & Carry Forward
-                    </NavLink>
-                    <NavLink
-                      to="/membership-certificate"
-                      className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                      Membership Certificate
-                    </NavLink>
+                  <div className="w-full pl-5">
+                    {serviceLinks.slice(5).map((link, index) => (
+                      <NavLink
+                      onClick={() => window.scrollTo(0, 0)}
+                        key={index}
+                        to={link.to}
+                        className=" px-4 py-3 text-black text-base font-medium hover:text-[#E7B51E] transition flex items-center">
+                        <img
+                          src={link.icon}
+                          alt={link.label}
+                          className="mr-5 w-6 h-6" // Adjust size of the icons
+                        />
+                        {link.label}
+                      </NavLink>
+                    ))}
                   </div>
                 </motion.div>
               )}
@@ -223,6 +265,7 @@ const Navbar = () => {
               },
             ].map((item) => (
               <NavLink
+              onClick={() => window.scrollTo(0, 0)}
                 target={item.target ? "_blank" : ""}
                 key={item.name}
                 to={item.path}
@@ -275,58 +318,24 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-36 left-3  bg-white shadow-xl rounded-lg z-[999]"
+              className="absolute top-36 left-3 p-2 bg-white shadow-xl rounded-lg z-[999]"
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}>
-              <NavLink
-                to="/vat-&-tax"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
-                VAT & Tax
-              </NavLink>
-              <NavLink
-                to="/company-law"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                Law
-              </NavLink>
-              <NavLink
-                to="/trade-license"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                Trade License
-              </NavLink>
-              <NavLink
-                to="/BIDA"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                BIDA
-              </NavLink>
-              <NavLink
-                to="/company-accounts"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                Accounts
-              </NavLink>
-              <NavLink
-                to="/fire-&-environmental-certification"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
-                Fire & Environmental Certification
-              </NavLink>
-              <NavLink
-                to="/IRC-&-ERC"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                IRC & ERC Services
-              </NavLink>
-              <NavLink
-                to="/vat-&-tax-case-solutions"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                VAT & Tax Case Solutions
-              </NavLink>
-              <NavLink
-                to="/refund-&-carry-forward"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                Refund & Carry Forward
-              </NavLink>
-              <NavLink
-                to="/membership-certificate"
-                className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
-                Membership Certificate
-              </NavLink>
+              <div onClick={() => setMenuOpen(false)} className="w-full">
+                {serviceLinks.map((link, index) => (
+                  <NavLink
+                  onClick={() => window.scrollTo(0, 0)}
+                    key={index}
+                    to={link.to}
+                    className=" px-4 py-3 text-black text-sm font-medium hover:text-[#E7B51E]  flex items-center">
+                    <img
+                      src={link.icon}
+                      alt={link.label}
+                      className="mr-4 w-6 h-6" // Adjust size of the icons
+                    />
+                    {link.label}
+                  </NavLink>
+                ))}
+              </div>
             </motion.div>
           )}
         </div>

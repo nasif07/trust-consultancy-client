@@ -5,6 +5,7 @@ import bannerRight from "../../assets/bannerRightImage.png";
 import achivement from "../../assets/achivementIcon.svg";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { NavLink } from "react-router";
 
 const Banner = () => {
   return (
@@ -39,9 +40,11 @@ const Banner = () => {
           Bangladesh's regulatory landscape, we assist businesses in navigating
           complex tax requirements with efficiency and accuracy.
         </p>
-        <button className="py-2.5 md:py-4 px-4 md:px-8 bg-[#E7B51E] rounded-[216px] text-white text-sm md:text-base font-medium">
-          Let’s Discuss Your Case
-        </button>
+        <NavLink onClick={() => window.scrollTo(0, 0)} to={"/contact-us"}>
+          <button className="py-2.5 md:py-4 px-4 md:px-8 bg-[#E7B51E] rounded-[216px] text-white text-sm md:text-base font-medium">
+            Let’s Discuss Your Case
+          </button>
+        </NavLink>
       </motion.div>
       <div className="relative">
         {/* Background Image */}

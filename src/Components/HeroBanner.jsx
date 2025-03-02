@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { NavLink } from "react-router";
 
 const HeroBanner = ({ title, subtitle, imageUrl }) => {
   return (
@@ -13,17 +14,16 @@ const HeroBanner = ({ title, subtitle, imageUrl }) => {
           stiffness: 100,
           damping: 20,
         }}
-        className="max-w-[650px]"
-      >
+        className="max-w-[650px]">
         <h1 className="text-[#2A2A2A] font-bold text-3xl md:text-4xl lg:text-[48px] pb-7 md:!leading-[55px] tracking-wide">
           {title}
         </h1>
-        <p className="text-base font-light pb-10">
-          {subtitle}
-        </p>
-        <button className="py-2.5 md:py-4 px-4 md:px-8 bg-[#E7B51E] rounded-[216px] text-white text-sm md:text-base font-medium">
-          Let’s Discuss Your Case
-        </button>
+        <p className="text-base font-light pb-10">{subtitle}</p>
+        <NavLink onClick={() => window.scrollTo(0, 0)} to={"/contact-us"}>
+          <button className="py-2.5 md:py-4 px-4 md:px-8 bg-[#E7B51E] rounded-[216px] text-white text-sm md:text-base font-medium">
+            Let’s Discuss Your Case
+          </button>
+        </NavLink>
       </motion.div>
 
       <div className="relative">
