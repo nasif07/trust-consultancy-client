@@ -2,24 +2,19 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 const data = [
   {
-    title: "1. Who can benefit from your services?",
+    title: "1. How can Trust Consultancy help with VAT and tax compliance?",
     description:
-      "Our services are designed for businesses of all sizes, including startups, SMEs, and large corporations seeking expert financial and compliance solutions in Bangladesh.",
+      "We assist businesses in tax planning, filing, dispute resolution, and compliance with Bangladesh’s tax regulations to ensure smooth operations and avoid penalties",
   },
   {
-    title: "2. How can Trust Consultancy help with VAT and tax compliance?",
+    title: "2. How do I get started with Trust Consultancy?",
     description:
-      "Our return policy allows you to return items within 30 days of purchase. Please visit our returns page for detailed instructions and to initiate a return.",
+      "You can contact us via phone, email, or visit our office. Our team will assess your needs and provide tailored solutions.",
   },
   {
-    title: "3. How do I get started with Trust Consultancy?",
+    title: "3. Is an initial consultation available?",
     description:
-      "Yes, you can change your shipping address before your order is shipped. Go to your account settings and update the shipping information accordingly.",
-  },
-  {
-    title: "4. Is an initial consultation available?",
-    description:
-      "We appreciate our loyal customers! Stay tuned for exclusive discounts, promotions, and special offers available to members of our loyalty program.",
+      "Yes, we offer an initial consultation to understand your requirements and provide guidance on how we can assist your business.",
   },
 ];
 

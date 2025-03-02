@@ -1,7 +1,7 @@
 import Faq from "../../Components/Faq";
 import HeroBanner from "../../Components/HeroBanner";
 import ServiceListView from "../../Components/ServiceListView";
-import imageUrl from "../../assets/companyLawBanner.png.png";
+import imageUrl from "../../assets/applicationAssistant.png";
 
 const MembershipCertificate = () => {
   const lists = [

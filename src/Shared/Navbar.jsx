@@ -79,14 +79,16 @@ const Navbar = () => {
         <div className="max-w-[1300px] mx-auto flex justify-between items-center">
           {/* Logo Initially Inside Contact Bar for Desktop */}
           {!isScrolled && (
-            <motion.img
-              src={logo}
-              alt="logo"
-              className="h-10 hidden lg:block"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3 }}
-            />
+            <NavLink to={"/"}>
+              <motion.img
+                src={logo}
+                alt="logo"
+                className="h-14 hidden lg:block"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </NavLink>
           )}
 
           {/* Desktop Contact Info */}
@@ -123,7 +125,11 @@ const Navbar = () => {
             }}
             transition={{ duration: 0.5 }}
             className="hidden md:block">
-            {isScrolled && <img src={logo} alt="logo" className="h-10" />}
+            {isScrolled && (
+              <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
+                <img src={logo} alt="logo" className="h-14" />
+              </NavLink>
+            )}
           </motion.div>
 
           {/* Desktop Navigation Links */}
@@ -132,7 +138,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                className={`text-black text-sm font-medium`}>
+                className={`text-black text-sm font-semibold`}>
                 <span
                   className={` ${servicesDropdownOpen && "text-[#E7B51E]"}`}>
                   Our Services
@@ -140,7 +146,7 @@ const Navbar = () => {
               </button>
               {servicesDropdownOpen && (
                 <motion.div
-                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                  onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
@@ -189,7 +195,7 @@ const Navbar = () => {
                       VAT & Tax Case Solutions
                     </NavLink>
                     <NavLink
-                      to="Refund-&-carry-forward"
+                      to="/refund-&-carry-forward"
                       className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                       Refund & Carry Forward
                     </NavLink>
@@ -204,18 +210,26 @@ const Navbar = () => {
             </div>
             {[
               { name: "Home", path: "/" },
-              { name: "About Us", path: "/about" },
-              { name: "FAQ", path: "/faq" },
-              { name: "Career", path: "/career" },
-              { name: "Contact Us", path: "/contact" },
+              { name: "Contact Us", path: "/contact-us" },
+              {
+                name: "NBR website",
+                path: "https://nbr.gov.bd/",
+                target: true,
+              },
+              {
+                name: "VAT website",
+                path: "https://vat.gov.bd/",
+                target: true,
+              },
             ].map((item) => (
               <NavLink
+                target={item.target ? "_blank" : ""}
                 key={item.name}
                 to={item.path}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#E7B51E] underline border-b-2 text-sm font-medium"
-                    : "text-black text-sm font-medium"
+                    ? "text-[#E7B51E] underline border-b-2 text-sm font-semibold"
+                    : "text-black text-sm font-semibold"
                 }>
                 {item.name}
               </NavLink>
@@ -224,9 +238,9 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle Button */}
           <div className="lg:hidden flex justify-between w-full items-center gap-10">
-            <div>
+            <NavLink to={"/"}>
               <img src={logo} alt="logo" className="h-10" />
-            </div>
+            </NavLink>
             <div>
               <button onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? (
@@ -248,11 +262,12 @@ const Navbar = () => {
         className={`lg:hidden bg-[#E7E7E7] overflow-hidden px-4 flex flex-col gap-3 ${
           menuOpen ? "py-3" : "py-0"
         }`}>
-        <div
-         className="whitespace-nowrap">
+        <div className="whitespace-nowrap">
           <button
             onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-           className={` text-sm font-medium ${servicesDropdownOpen && "underline text-[#E7B51E]"}`}>
+            className={` text-sm font-semibold ${
+              servicesDropdownOpen && "underline text-[#E7B51E]"
+            }`}>
             Our Services
           </button>
           {servicesDropdownOpen && (
@@ -261,8 +276,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
               className="absolute top-36 left-3  bg-white shadow-xl rounded-lg z-[999]"
-              onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-              >
+              onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}>
               <NavLink
                 to="/vat-&-tax"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E]  hover:text-white">
@@ -304,7 +318,7 @@ const Navbar = () => {
                 VAT & Tax Case Solutions
               </NavLink>
               <NavLink
-                to="/Refund-&-carry-forward"
+                to="/refund-&-carry-forward"
                 className="block px-4 py-2 text-black  text-sm font-medium hover:bg-[#E7B51E] hover:text-white">
                 Refund & Carry Forward
               </NavLink>
@@ -318,13 +332,13 @@ const Navbar = () => {
         </div>
         {[
           { name: "Home", path: "/" },
-          { name: "About Us", path: "/about" },
-          { name: "FAQ", path: "/faq" },
-          { name: "Career", path: "/career" },
-          { name: "Contact Us", path: "/contact" },
+          { name: "Contact Us", path: "/contact-us" },
+          { name: "NBR website", path: "https://nbr.gov.bd/", target: true },
+          { name: "VAT website", path: "https://vat.gov.bd/", target: true },
         ].map((item) => (
           <NavLink
             key={item.name}
+            target={item.target ? "_blank" : ""}
             to={item.path}
             onClick={() => setMenuOpen(false)}
             className={({ isActive }) =>

@@ -1,7 +1,7 @@
 import Faq from "../../Components/Faq";
 import HeroBanner from "../../Components/HeroBanner";
 import ServiceListView from "../../Components/ServiceListView";
-import imageUrl from "../../assets/tradeLicenseBanner.png.png";
+import imageUrl from "../../assets/tradeLicenseBanner.png";
 
 const TradeLicense = () => {
   const lists = [
