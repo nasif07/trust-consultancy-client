@@ -38,6 +38,19 @@ const FireAndEnvironmentalServices = () => {
       ],
     },
   ];
+
+  const faqData = [
+    {
+      title: "1. Why is fire and environmental certification necessary?",
+      description:
+        "It ensures business compliance with safety and environmental laws, preventing legal issues.",
+    },
+    {
+      title: "2. How can you help obtain these certificates?",
+      description:
+        "We assist in preparing documents, liaising with authorities, and ensuring compliance.",
+    },
+  ];
   return (
     <>
       <HeroBanner
@@ -49,7 +62,7 @@ const FireAndEnvironmentalServices = () => {
       <ServiceListView
         title={"Our Fire & Environmental Certification Services"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };

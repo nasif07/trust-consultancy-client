@@ -48,7 +48,19 @@ const VatAndTax = () => {
         }
     ];
     
-    
+    const faqData = [
+        {
+          title: "1. Why do I need VAT & Tax consulting services?",
+          
+          description:
+            "Our services help businesses comply with tax regulations, avoid penalties, and optimize financial strategies.",
+        },
+        {
+          title: "2. How often do I need to file VAT returns?",
+          description:
+            "VAT returns must be filed monthly as per Bangladesh’s regulations.",
+        }
+      ];
     
   return (
     <>
@@ -59,7 +71,7 @@ const VatAndTax = () => {
           "At Trust Consultancy, we specialize in providing comprehensive VAT and tax consulting services tailored to businesses operating in Bangladesh. Navigating the complexities of tax regulations can be challenging, but with our expertise, you can ensure compliance, minimize liabilities, and optimize financial efficiency."
         }></HeroBanner>
         <ServiceListView title={"Our VAT & Tax Services"} itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };

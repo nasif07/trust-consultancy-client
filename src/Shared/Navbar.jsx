@@ -35,6 +35,24 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [timeoutId, setTimeoutId] = useState(null); // Store the timeout ID
+
+  const handleMouseEnter = () => {
+    // Clear any existing timeout when mouse enters
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    setServicesDropdownOpen(true); // Open the dropdown immediately
+  };
+
+  const handleMouseLeave = () => {
+    // Set a timeout to close the dropdown after 2 seconds
+    const id = setTimeout(() => {
+      setServicesDropdownOpen(false);
+    }, 1000);
+    setTimeoutId(id); // Store the timeout ID
+  };
+
   const serviceLinks = [
     {
       to: "/vat-&-tax",
@@ -201,10 +219,10 @@ const Navbar = () => {
             {/* Dropdown for Services */}
             <div className="relative">
               <button
-                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                className={`text-black text-sm font-semibold`}>
-                <span
-                  className={` ${servicesDropdownOpen && "text-[#E7B51E]"}`}>
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className="text-black text-sm font-semibold">
+                <span className={`${servicesDropdownOpen && "text-[#E7B51E] underline"}`}>
                   Our Services
                 </span>
               </button>
@@ -214,11 +232,13 @@ const Navbar = () => {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={() => setServicesDropdownOpen(false)}
                   className="absolute top-12 -left-40 whitespace-nowrap justify-between bg-white shadow-xl rounded-3xl z-10 flex gap-8 p-5">
                   <div className="w-full">
                     {serviceLinks.slice(0, 5).map((link, index) => (
                       <NavLink
-                      onClick={() => window.scrollTo(0, 0)}
+                        onClick={() => window.scrollTo(0, 0)}
                         key={index}
                         to={link.to}
                         className=" px-4 py-3 text-black text-base font-medium hover:text-[#E7B51E] transition flex items-center">
@@ -234,7 +254,7 @@ const Navbar = () => {
                   <div className="w-full pl-5">
                     {serviceLinks.slice(5).map((link, index) => (
                       <NavLink
-                      onClick={() => window.scrollTo(0, 0)}
+                        onClick={() => window.scrollTo(0, 0)}
                         key={index}
                         to={link.to}
                         className=" px-4 py-3 text-black text-base font-medium hover:text-[#E7B51E] transition flex items-center">
@@ -265,7 +285,7 @@ const Navbar = () => {
               },
             ].map((item) => (
               <NavLink
-              onClick={() => window.scrollTo(0, 0)}
+                onClick={() => window.scrollTo(0, 0)}
                 target={item.target ? "_blank" : ""}
                 key={item.name}
                 to={item.path}
@@ -323,7 +343,7 @@ const Navbar = () => {
               <div onClick={() => setMenuOpen(false)} className="w-full">
                 {serviceLinks.map((link, index) => (
                   <NavLink
-                  onClick={() => window.scrollTo(0, 0)}
+                    onClick={() => window.scrollTo(0, 0)}
                     key={index}
                     to={link.to}
                     className=" px-4 py-3 text-black text-sm font-medium hover:text-[#E7B51E]  flex items-center">

@@ -35,6 +35,19 @@ const BidaServices = () => {
     },
   ];
 
+  const faqData = [
+    {
+      title: "1. What is BIDA, and why is it important?",
+      description:
+        "BIDA (Bangladesh Investment Development Authority) facilitates foreign and local investments.",
+    },
+    {
+      title: "2. How do you assist with BIDA approvals?",
+      description:
+        "We help with documentation, approvals, and regulatory compliance for investors.",
+    },
+  ];
+
   return (
     <>
       <HeroBanner
@@ -46,7 +59,7 @@ const BidaServices = () => {
       <ServiceListView
         title={"Our BIDA Services"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };

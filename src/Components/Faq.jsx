@@ -1,24 +1,7 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-const data = [
-  {
-    title: "1. How can Trust Consultancy help with VAT and tax compliance?",
-    description:
-      "We assist businesses in tax planning, filing, dispute resolution, and compliance with Bangladesh’s tax regulations to ensure smooth operations and avoid penalties",
-  },
-  {
-    title: "2. How do I get started with Trust Consultancy?",
-    description:
-      "You can contact us via phone, email, or visit our office. Our team will assess your needs and provide tailored solutions.",
-  },
-  {
-    title: "3. Is an initial consultation available?",
-    description:
-      "Yes, we offer an initial consultation to understand your requirements and provide guidance on how we can assist your business.",
-  },
-];
+import { motion, AnimatePresence } from "framer-motion"; 
 
-const Faq = () => {
+const Faq = ({faqData}) => {
   const [isOpen, setIsOpen] = useState(null);
 
   const handleToggle = (idx) =>
@@ -52,7 +35,7 @@ const Faq = () => {
               transition: { staggerChildren: 0.1 },
             },
           }}>
-          {data?.map((item, idx) => (
+          {faqData?.map((item, idx) => (
             <motion.div
               key={idx}
               className="bg-[#F4F4F4] rounded-3xl"

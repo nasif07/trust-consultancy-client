@@ -47,6 +47,18 @@ const TradeLicense = () => {
     },
   ];
 
+  const faqData = [
+    {
+      title: "1. Who needs a trade license?",
+      description:
+        "Every business in Bangladesh must have a valid trade license to operate legally.",
+    },
+    {
+      title: "2. How long does it take to get a trade license?",
+      description:
+        " Processing time varies but usually takes a few weeks, depending on documentation and regulatory approvals.",
+    },
+  ];
   return (
     <>
       <HeroBanner
@@ -58,7 +70,7 @@ const TradeLicense = () => {
       <ServiceListView
         title={"Our Trade License Services"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };

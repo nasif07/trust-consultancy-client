@@ -47,6 +47,19 @@ const CompanyLaw = () => {
     },
   ];
 
+  const faqData = [
+    {
+      title: "1. What company law services do you offer?",
+      description:
+        "We assist in company registration, compliance, corporate governance, and legal advisory.",
+    },
+    {
+      title: "2. How can you help with corporate compliance?",
+      description:
+        "We ensure businesses adhere to legal frameworks, avoiding legal risks and penalties.",
+    },
+  ];
+
   return (
     <>
       <HeroBanner
@@ -58,7 +71,7 @@ const CompanyLaw = () => {
       <ServiceListView
         title={"Our Company Law Services"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };

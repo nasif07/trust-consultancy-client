@@ -38,6 +38,19 @@ const IrcAndErcServices = () => {
       ],
     },
   ];
+
+  const faqData = [
+    {
+      title: "1. What are IRC & ERC, and who needs them?",
+      description:
+        "Import Registration Certificates (IRC) and Export Registration Certificates (ERC) are required for businesses engaged in import-export activities",
+    },
+    {
+      title: "2. How long does the process take?",
+      description:
+        "Processing time depends on the regulatory approvals and documentation provided.",
+    },
+  ];
   return (
     <>
       <HeroBanner
@@ -49,7 +62,7 @@ const IrcAndErcServices = () => {
       <ServiceListView
         title={"Our IRC & ERC Services"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };

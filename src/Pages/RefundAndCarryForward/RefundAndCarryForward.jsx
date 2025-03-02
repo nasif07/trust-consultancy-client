@@ -39,6 +39,19 @@ const RefundAndCarryForward = () => {
     },
   ];
 
+  const faqData = [
+    {
+      title: "1. How do VAT refunds work?",
+      description:
+        "Businesses that overpay VAT can apply for refunds through the tax authority.",
+    },
+    {
+      title: "2. What is tax carry forward?",
+      description:
+        "Excess tax credits can be carried forward to offset future tax liabilities.",
+    },
+  ];
+
   return (
     <>
       <HeroBanner
@@ -52,7 +65,7 @@ const RefundAndCarryForward = () => {
       <ServiceListView
         title={"Our Refund & Carry Forward Services"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };

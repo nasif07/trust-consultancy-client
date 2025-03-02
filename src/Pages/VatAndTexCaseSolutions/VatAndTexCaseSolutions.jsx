@@ -3,40 +3,53 @@ import HeroBanner from "../../Components/HeroBanner";
 import ServiceListView from "../../Components/ServiceListView";
 import imageUrl from "../../assets/vatTaxCaseSolutions.png";
 const VatAndTexCaseSolutions = () => {
-    const lists = [
-        {
-            title: "VAT & Tax Dispute Resolution",
-            items: [
-                "Representation in tax audits, investigations, and dispute settlements.",
-                "Assistance in responding to tax authority queries and notices.",
-                "Legal support for tax appeals and litigation."
-            ]
-        },
-        {
-            title: "VAT & Tax Compliance Advisory",
-            items: [
-                "Ensuring businesses comply with VAT and tax regulations.",
-                "Expert guidance on tax liabilities, exemptions, and deductions.",
-                "Review of tax filings to prevent compliance issues."
-            ]
-        },
-        {
-            title: "Refund & Carry Forward Assistance",
-            items: [
-                "Assistance with VAT and tax refund claims.",
-                "Support for carrying forward excess tax credits.",
-                "Proper documentation and submission for quick processing."
-            ]
-        },
-        {
-            title: "Tax Planning & Risk Management",
-            items: [
-                "Strategic tax planning to minimize liabilities.",
-                "Risk assessment and mitigation strategies.",
-                "Proactive solutions to avoid future tax disputes."
-            ]
-        }
-    ];
+  const lists = [
+    {
+      title: "VAT & Tax Dispute Resolution",
+      items: [
+        "Representation in tax audits, investigations, and dispute settlements.",
+        "Assistance in responding to tax authority queries and notices.",
+        "Legal support for tax appeals and litigation.",
+      ],
+    },
+    {
+      title: "VAT & Tax Compliance Advisory",
+      items: [
+        "Ensuring businesses comply with VAT and tax regulations.",
+        "Expert guidance on tax liabilities, exemptions, and deductions.",
+        "Review of tax filings to prevent compliance issues.",
+      ],
+    },
+    {
+      title: "Refund & Carry Forward Assistance",
+      items: [
+        "Assistance with VAT and tax refund claims.",
+        "Support for carrying forward excess tax credits.",
+        "Proper documentation and submission for quick processing.",
+      ],
+    },
+    {
+      title: "Tax Planning & Risk Management",
+      items: [
+        "Strategic tax planning to minimize liabilities.",
+        "Risk assessment and mitigation strategies.",
+        "Proactive solutions to avoid future tax disputes.",
+      ],
+    },
+  ];
+
+  const faqData = [
+    {
+      title: "1. What should I do if I receive a tax notice?",
+      description:
+        "We provide expert guidance in responding to tax notices and resolving disputes.",
+    },
+    {
+      title: "2. Can you represent my business in tax audits?",
+      description:
+        "Yes, we offer professional representation in tax audits and dispute resolution.",
+    },
+  ];
   return (
     <>
       <HeroBanner
@@ -48,7 +61,7 @@ const VatAndTexCaseSolutions = () => {
       <ServiceListView
         title={"Our VAT & Tax Case Solutions"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };
