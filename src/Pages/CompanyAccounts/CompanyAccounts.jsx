@@ -47,6 +47,19 @@ const CompanyAccounts = () => {
     },
   ];
 
+  const faqData = [
+    {
+      title: "1. Why is professional accounting important?",
+      description:
+        "Accurate financial records ensure compliance, facilitate tax filing, and support business growth.",
+    },
+    {
+      title: "2. Do you provide bookkeeping services?",
+      description:
+        "Yes, we offer bookkeeping, financial reporting, and advisory services.",
+    },
+  ];
+
   return (
     <>
       <HeroBanner
@@ -58,7 +71,7 @@ const CompanyAccounts = () => {
       <ServiceListView
         title={"Our Company Accounts Services"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };

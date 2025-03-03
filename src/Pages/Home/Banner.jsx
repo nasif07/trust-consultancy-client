@@ -9,13 +9,13 @@ import { NavLink } from "react-router";
 
 const Banner = () => {
   return (
-    <section className="max-w-[1300px] mx-auto pt-4 pb-10 lg:py-28 px-3 md:px-10 lg:px-0 flex flex-col lg:flex-row gap-40 items-center font-inter">
+    <section className="max-w-[1300px] mx-auto pt-4 pb-10 lg:py-28 px-3 md:px-10 lg:px-0 flex flex-col lg:flex-row gap-14 md:gap-40 items-center font-inter">
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
         className="max-w-[650px]">
-        <h1 className="text-[#2A2A2A] font-bold text-3xl md:text-4xl lg:text-[65px] pb-7 md:!leading-[80px] tracking-wide">
+        <h1 className="text-[#2A2A2A] font-bold text-[38px] leading-[46px] lg:text-[65px] pb-7 md:!leading-[80px] tracking-wide">
           Your Partner in Business{" "}
           <TypeAnimation
             className="text-[]"

@@ -5,6 +5,7 @@ import img4 from "../../assets/leafIcon.svg";
 import img5 from "../../assets/rangeIcon.svg";
 import img6 from "../../assets/refundIcon.svg";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router";
 
 const servicesData = [
   {
@@ -12,35 +13,41 @@ const servicesData = [
     subtitle:
       "Expert guidance on VAT and tax compliance, filing, Documentation, and strategic planning.",
     image: img1,
+    to: "/vat-&-tax",
   },
   {
     title: "Company Law Services",
     subtitle:
       "Legal support for company registration, regulatory compliance, and corporate governance.",
     image: img2,
+    to: "/company-law",
   },
   {
     title: "Trade License Assistance",
     subtitle: "Seamless assistance in obtaining and renewing trade licenses.",
     image: img3,
+    to: "/trade-license",
   },
   {
     title: "Fire & Environmental Doc",
     subtitle:
       "Ensuring businesses meet fire safety and environmental compliance standards.",
     image: img4,
+    to: "/fire-&-environmental-certification",
   },
   {
     title: "VAT & Tax Case Solutions",
     subtitle:
       "Expert representation and resolution of VAT and tax-related disputes.",
     image: img5,
+    to: "/vat-&-tax-case-solutions",
   },
   {
     title: "Refund & Carry Forward",
     subtitle:
       "Efficient management of VAT refunds and tax credit carry forward processes.",
     image: img6,
+    to: "/refund-&-carry-forward",
   },
 ];
 
@@ -82,40 +89,44 @@ const Services = () => {
             },
           }}>
           {servicesData.map((item, index) => (
-            <motion.div
-              key={index}
-              className="border-2 border-[#03472D] rounded-2xl p-6 md:p-12"
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }} // Faster
-              whileHover={{ scale: 1.05 }} // Subtle hover effect
-            >
-              {/* Image Animation (Faster) */}
+            <NavLink
+              to={item.to}
+              onClick={() => window.scrollTo(0, 0)}
+              key={index}>
               <motion.div
-                className="flex justify-center py-12"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                className="border-2 border-[#03472D] rounded-2xl p-6 md:p-12"
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: index * 0.1 + 0.05 }} // Faster transition
+                transition={{ duration: 0.4, delay: index * 0.1 }} // Faster
+                whileHover={{ scale: 1.05 }} // Subtle hover effect
               >
-                <img src={item.image} alt={item.title} />
-              </motion.div>
+                {/* Image Animation (Faster) */}
+                <motion.div
+                  className="flex justify-center py-12"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 + 0.05 }} // Faster transition
+                >
+                  <img src={item.image} alt={item.title} />
+                </motion.div>
 
-              {/* Title and Text Animation (Faster) */}
-              <motion.div
-                className="text-center"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: index * 0.1 + 0.1 }} // Text appears quickly
-              >
-                <h2 className="text-2xl font-semibold text-[#E7B51E] pb-4">
-                  {item.title}
-                </h2>
-                <p className="text-white text-base">{item.subtitle}</p>
+                {/* Title and Text Animation (Faster) */}
+                <motion.div
+                  className="text-center"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 + 0.1 }} // Text appears quickly
+                >
+                  <h2 className="text-2xl font-semibold text-[#E7B51E] pb-4">
+                    {item.title}
+                  </h2>
+                  <p className="text-white text-base">{item.subtitle}</p>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </NavLink>
           ))}
         </motion.div>
       </div>

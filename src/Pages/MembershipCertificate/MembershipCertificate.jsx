@@ -39,6 +39,19 @@ const MembershipCertificate = () => {
     },
   ];
 
+  const faqData = [
+    {
+      title: "1. What is a membership certificate, and why do I need one?",
+      description:
+        "A membership certificate verifies your business’s affiliation with industry or trade associations, enhancing credibility.",
+    },
+    {
+      title: "2. How can you assist in obtaining a membership certificate?",
+      description:
+        "We guide businesses through the application process and ensure all necessary documentation is completed accurately.",
+    },
+  ];
+
   return (
     <>
       <HeroBanner
@@ -50,7 +63,7 @@ const MembershipCertificate = () => {
       <ServiceListView
         title={"Our Membership Certificate Services"}
         itemData={lists}></ServiceListView>
-      <Faq></Faq>
+      <Faq faqData={faqData}></Faq>
     </>
   );
 };
