@@ -9,13 +9,13 @@ import { NavLink } from "react-router";
 
 const Banner = () => {
   return (
-    <section className="max-w-[1300px] mx-auto pt-4 pb-10 lg:py-28 px-3 md:px-10 lg:px-0 flex flex-col lg:flex-row gap-14 md:gap-40 items-center font-inter">
+    <section className="max-w-[1300px] mx-auto pt-4 pb-10 md:pb-32 lg:py-28 px-3 md:px-10 lg:px-0 flex flex-col lg:flex-row gap-14 md:gap-20 lg:gap-40 items-start lg:items-center font-inter">
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
         className="max-w-[650px]">
-        <h1 className="text-[#2A2A2A] font-bold text-[38px] leading-[46px] lg:text-[65px] pb-7 md:!leading-[80px] tracking-wide">
+        <h1 className="text-[#2A2A2A] font-bold text-[38px] leading-[46px] md:text-5xl lg:text-[65px] pb-7 md:!leading-[50px] lg:!leading-[80px] tracking-wide">
           Your Partner in Business{" "}
           <TypeAnimation
             className="text-[]"
@@ -46,7 +46,7 @@ const Banner = () => {
           </button>
         </NavLink>
       </motion.div>
-      <div className="relative">
+      <div className="relative mx-auto lg:mx-0">
         {/* Background Image */}
         <motion.img
           src={bannerBg}

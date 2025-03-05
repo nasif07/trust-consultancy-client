@@ -274,12 +274,12 @@ const Navbar = () => {
               { name: "Home", path: "/" },
               { name: "Contact Us", path: "/contact-us" },
               {
-                name: "NBR website",
+                name: "NBR",
                 path: "https://nbr.gov.bd/",
                 target: true,
               },
               {
-                name: "VAT website",
+                name: "VAT Online",
                 path: "https://vat.gov.bd/",
                 target: true,
               },
@@ -362,8 +362,8 @@ const Navbar = () => {
         {[
           { name: "Home", path: "/" },
           { name: "Contact Us", path: "/contact-us" },
-          { name: "NBR website", path: "https://nbr.gov.bd/", target: true },
-          { name: "VAT website", path: "https://vat.gov.bd/", target: true },
+          { name: "NBR", path: "https://nbr.gov.bd/", target: true },
+          { name: "VAT Online", path: "https://vat.gov.bd/", target: true },
         ].map((item) => (
           <NavLink
             key={item.name}
