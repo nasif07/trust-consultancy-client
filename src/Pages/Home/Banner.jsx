@@ -15,7 +15,7 @@ const Banner = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
         className="max-w-[650px]">
-        <h1 className="text-[#2A2A2A] font-bold text-[38px] leading-[46px] md:text-5xl lg:text-[65px] pb-7 md:!leading-[50px] lg:!leading-[80px] tracking-wide">
+        <h1 className="text-[#2A2A2A] font-bold text-[38px] leading-[46px] md:text-5xl lg:text-[65px] pb-7 md:!leading-[50px] lg:!leading-[80px] tracking-wide text-center md:text-start">
           Your Partner in Business{" "}
           <TypeAnimation
             className="text-[]"
@@ -34,13 +34,13 @@ const Banner = () => {
           />
           & Compliance
         </h1>
-        <p className="text-base font-light pb-10">
+        <p className="text-base font-light pb-10 text-center md:text-start">
           Welcome to Trust Consultancy, your reliable partner in VAT, Tax, and
           financial compliance solutions. With years of expertise in
           Bangladesh's regulatory landscape, we assist businesses in navigating
           complex tax requirements with efficiency and accuracy.
         </p>
-        <NavLink onClick={() => window.scrollTo(0, 0)} to={"/contact-us"}>
+        <NavLink onClick={() => window.scrollTo(0, 0)} to={"/contact-us"} className=" flex justify-center md:justify-start">
           <button className="py-2.5 md:py-4 px-4 md:px-8 bg-[#E7B51E] rounded-[216px] text-white text-sm md:text-base font-medium">
             Let’s Discuss Your Case
           </button>
